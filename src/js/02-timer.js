@@ -3,10 +3,10 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 const inputId = document.querySelector('#datetime-picker');
 const startBTN = document.querySelector('[data-start]');
-const days = document.querySelector('.value[data-days]');
-const hours = document.querySelector('.value[data-hours]');
-const minutes = document.querySelector('.value[data-minutes]');
-const seconds = document.querySelector('.value[data-seconds]');
+const d = document.querySelector('.value[data-days]');
+const h = document.querySelector('.value[data-hours]');
+const m = document.querySelector('.value[data-minutes]');
+const s = document.querySelector('.value[data-seconds]');
 
 let interval = null;
 startBTN.disabled = true;
@@ -65,10 +65,10 @@ function convertMs(ms) {
 }
 
 function timer({ days, hours, minutes, seconds }) {
-  days.textContent = `{$days}`;
-  hours.textContent = `{$hours}`;
-  minutes.textContent = `{$minutes}`;
-  seconds.textContent = `{$seconds}`;
+  d.textContent = `{$days}`;
+  h.textContent = `{$hours}`;
+  m.textContent = `{$minutes}`;
+  s.textContent = `{$seconds}`;
 }
 
 function addLeadingZero(b) {
