@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
-const inputId = document.querySelector('#datetime-picker');
 const startBTN = document.querySelector('[data-start]');
 const d = document.querySelector('.value[data-days]');
 const h = document.querySelector('.value[data-hours]');
@@ -31,6 +30,7 @@ const options = {
 
           if (time < 1000) {
             clearInterval(interval);
+            startBTN.disabled = true;
           }
 
           const a = convertMs(time);
@@ -65,10 +65,10 @@ function convertMs(ms) {
 }
 
 function timer({ days, hours, minutes, seconds }) {
-  d.textContent = `{$days}`;
-  h.textContent = `{$hours}`;
-  m.textContent = `{$minutes}`;
-  s.textContent = `{$seconds}`;
+  d.textContent = `${days}`;
+  h.textContent = `${hours}`;
+  m.textContent = `${minutes}`;
+  s.textContent = `${seconds}`;
 }
 
 function addLeadingZero(b) {
