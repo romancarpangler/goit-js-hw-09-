@@ -69,6 +69,7 @@ function timer({ days, hours, minutes, seconds }) {
   h.textContent = `${hours}`;
   m.textContent = `${minutes}`;
   s.textContent = `${seconds}`;
+  startBTN.disabled = true;
 }
 
 function addLeadingZero(b) {
